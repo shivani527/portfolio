@@ -67,7 +67,7 @@ export default function Intro() {
         <div className="headline__btnholder d-flex flex-column flex-sm-row">
           <a
             className="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-in-up"
-            href="#portfolio"
+            href="#projects"
             data-delay="0.5"
             data-duration="0.7"
           >

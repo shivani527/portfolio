@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Location",
+    "text": "Secunderabad, Telangana, India",
+    "link": "https://www.google.com/maps/search/?api=1&query=Secunderabad%2C%20Telangana%2C%20India",
+    "type": "location"
+  },
+  {
+    "title": "Phone",
+    "text": "+91 7396762304",
+    "link": "tel:+917396762304",
+    "type": "phone"
+  },
+  {
+    "title": "Email",
+    "text": "shivanikokkula527@gmail.com",
+    "link": "mailto:shivanikokkula527@gmail.com?subject=Message%20from%20your%20portfolio",
+    "type": "email"
+  }
+]

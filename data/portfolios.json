@@ -1,0 +1,377 @@
+[
+  {
+    "href": "/img/projects/customer-churn.jpg",
+    "dataImage": "/img/projects/customer-churn.jpg",
+    "src": "/img/projects/customer-churn.jpg",
+    "alt": "Churn risk ticket page showing a low-risk result",
+    "figcaptionClass": "gallery__descr",
+    "title": "Customer Churn Prediction",
+    "titleClass": "",
+    "tags": [
+      {
+        "text": "AI/ML",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "Data Analytics",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "Python",
+        "className": "rounded-tag opposite"
+      }
+    ],
+    "description": "Food-delivery churn prediction app with a FastAPI backend and a plain HTML/CSS/JS front end. The demo shown runs on a rule-based fallback when no trained model file is loaded.",
+    "width": 1102,
+    "height": 477,
+    "links": {
+      "github": "https://github.com/shivani527/churn-prediction-app",
+      "live": null
+    },
+    "overview": "Predicts whether a food-delivery customer is likely to stop ordering, using occupation, monthly income and survey answers about their delivery experience. A FastAPI backend serves the predictions and a plain HTML, CSS and JavaScript front end shows the result as a printed-style risk ticket.",
+    "features": [
+      "Order intake form with occupation, income and survey responses",
+      "Churn risk percentage and risk level on a ticket-style result",
+      "FastAPI backend with automatic interactive API docs",
+      "Automated API tests written with pytest",
+      "Models explored in the notebook: Logistic Regression, Random Forest and XGBoost",
+      "A clearly labelled rule-based demo mode is used when the trained model file is not loaded"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "scikit-learn",
+      "Pydantic",
+      "pytest",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "status": "Working demo. The deployed version needs the trained model files added; no accuracy figures are published here."
+  },
+  {
+    "href": "/img/projects/fake-news-detector.jpg",
+    "dataImage": "/img/projects/fake-news-detector.jpg",
+    "src": "/img/projects/fake-news-detector.jpg",
+    "alt": "News text box with a prediction result",
+    "figcaptionClass": "gallery__descr opposite",
+    "title": "Fake News Detector",
+    "titleClass": "opposite",
+    "tags": [
+      {
+        "text": "AI/ML",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "NLP",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "Python",
+        "className": "rounded-tag"
+      }
+    ],
+    "description": "Fake news detection project. The current GitHub version is a rule-based scorer built with FastAPI that looks at wording and source patterns. It flags risk and is not a fact-checker.",
+    "width": 1365,
+    "height": 721,
+    "links": {
+      "github": "https://github.com/shivani527/fake-news-detector",
+      "live": null
+    },
+    "overview": "A local misinformation-risk checker. You paste an article and it scores wording patterns such as sensational language, clickbait phrases, absolute claims and unverified source domains, then shows which signals matched. It is a prompt to take a second look, not a fact-checker.",
+    "features": [
+      "Heuristic risk score with a per-signal breakdown",
+      "History of past checks with pagination and a source-domain filter",
+      "Related news coverage and a live news dashboard through NewsAPI (needs an API key)",
+      "Light and dark mode",
+      "No external AI or LLM APIs are used"
+    ],
+    "stack": [
+      "Python",
+      "FastAPI",
+      "Pydantic",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "NewsAPI"
+    ],
+    "status": "Working locally. User accounts are not implemented and storage is a simple JSON file."
+  },
+  {
+    "href": "/img/projects/veloop-rewards.png",
+    "dataImage": "/img/projects/veloop-rewards.png",
+    "src": "/img/projects/veloop-rewards.png",
+    "alt": "VELOOP Rewards dashboard overview page",
+    "figcaptionClass": "gallery__descr",
+    "title": "VELOOP Rewards",
+    "titleClass": "",
+    "tags": [
+      {
+        "text": "Full-Stack",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "React",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "Node.js",
+        "className": "rounded-tag opposite"
+      }
+    ],
+    "description": "Rewards web app with a dashboard summary and reward claiming, built with React, Node.js, Express and MongoDB Atlas. Demo account only; still in progress.",
+    "width": 1365,
+    "height": 604,
+    "links": {
+      "github": null,
+      "live": null
+    },
+    "overview": "A rewards web app where a member completes activities and claims rewards. The dashboard shows a rewards summary, available balance and tasks claimed, and claimed tasks are saved in MongoDB through a REST API.",
+    "features": [
+      "Overview dashboard with a rewards summary",
+      "Earn Rewards page with demo tasks: daily check-in, complete a task and try a new feature",
+      "Balance and tasks-claimed counters saved in MongoDB",
+      "Backend connection status shown on the page",
+      "Light and dark mode toggle"
+    ],
+    "stack": [
+      "React",
+      "Node.js",
+      "Express.js",
+      "MongoDB Atlas",
+      "REST API"
+    ],
+    "status": "In progress. Runs with a demo account only."
+  },
+  {
+    "href": "/img/projects/course-craft.png",
+    "dataImage": "/img/projects/course-craft.png",
+    "src": "/img/projects/course-craft.png",
+    "alt": "Course Craft e-learning home page",
+    "figcaptionClass": "gallery__descr opposite",
+    "title": "Course Craft",
+    "titleClass": "opposite",
+    "tags": [
+      {
+        "text": "Web Development",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "HTML",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "CSS",
+        "className": "rounded-tag"
+      }
+    ],
+    "description": "Responsive e-learning website front end for programming courses, built on a free HTML template. The content shown is demo content.",
+    "width": 1514,
+    "height": 906,
+    "links": {
+      "github": "https://github.com/shivani527/coursecraft",
+      "live": null
+    },
+    "overview": "A multi-page front end for an online learning site that offers free programming courses. It has a home page with a course search bar, about, courses, course detail, features, team, testimonial and contact pages, and a sign-up form. It is built on a free HTML template, and the sample content on the pages is placeholder content.",
+    "features": [
+      "Eight linked pages with shared navigation",
+      "Course search bar and sign-up form layout",
+      "Contact page with a message form layout",
+      "Responsive layout"
+    ],
+    "stack": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Bootstrap"
+    ],
+    "status": "Front end only. Counters, course names and contact details shown are demo content."
+  },
+  {
+    "href": "/img/projects/ai-citizen-fraud-shield.png",
+    "dataImage": "/img/projects/ai-citizen-fraud-shield.png",
+    "src": "/img/projects/ai-citizen-fraud-shield.png",
+    "alt": "Title card for the AI Citizen Fraud Shield project",
+    "figcaptionClass": "gallery__descr",
+    "title": "AI Citizen Fraud Shield",
+    "titleClass": "",
+    "tags": [
+      {
+        "text": "AI/ML",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "Python",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "Hackathon",
+        "className": "rounded-tag opposite"
+      }
+    ],
+    "description": "Streamlit app with scam detection, digital arrest awareness, a fraud chatbot and a dashboard, built for ET AI Hackathon 2.0.",
+    "width": 1365,
+    "height": 767,
+    "links": {
+      "github": "https://github.com/shivani527/ai-citizen-fraud-shield",
+      "live": null
+    },
+    "overview": "A Streamlit app built for ET AI Hackathon 2.0 to help citizens recognise fraud. It has four pages: a scam message detector, a digital arrest scam detector, an AI fraud awareness chatbot and a dashboard of cybercrime trends in India.",
+    "features": [
+      "Scam message detector using a DistilBERT model, with a training script and dataset in the repo",
+      "Digital arrest scam detector that lists the fraud patterns it finds",
+      "Fraud awareness chatbot using the Google Gemini API",
+      "Dashboard with cybercrime growth and state-wise charts and a map"
+    ],
+    "stack": [
+      "Python",
+      "Streamlit",
+      "Transformers (DistilBERT)",
+      "PyTorch",
+      "scikit-learn",
+      "Pandas",
+      "Plotly",
+      "Folium",
+      "Google Gemini API"
+    ],
+    "status": "Hackathon project (certificate of participation). No accuracy figures are published here."
+  },
+  {
+    "href": "/img/projects/weather-app.jpg",
+    "dataImage": "/img/projects/weather-app.jpg",
+    "src": "/img/projects/weather-app.jpg",
+    "alt": "Weather app showing current weather for Secunderabad",
+    "figcaptionClass": "gallery__descr opposite",
+    "title": "Advanced Weather App",
+    "titleClass": "opposite",
+    "tags": [
+      {
+        "text": "Python",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "Flask",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "API",
+        "className": "rounded-tag"
+      }
+    ],
+    "description": "Flask web app that shows current weather for a searched city using the OpenWeatherMap API.",
+    "width": 1365,
+    "height": 725,
+    "links": {
+      "github": "https://github.com/shivani527/Wheather-app",
+      "live": null
+    },
+    "overview": "A small web app where you search for a city and see its current weather: temperature, humidity, wind speed and a short description with an icon, fetched from the OpenWeatherMap API.",
+    "features": [
+      "City search form",
+      "Temperature in Celsius, humidity and wind speed",
+      "Weather description and icon",
+      "Error message when a city is not found"
+    ],
+    "stack": [
+      "Python",
+      "Flask",
+      "Requests",
+      "OpenWeatherMap API",
+      "HTML",
+      "CSS"
+    ],
+    "status": "Working locally."
+  },
+  {
+    "href": "/img/projects/student-performance-predictor.jpg",
+    "dataImage": "/img/projects/student-performance-predictor.jpg",
+    "src": "/img/projects/student-performance-predictor.jpg",
+    "alt": "Student performance predictor showing a predicted final mark",
+    "figcaptionClass": "gallery__descr",
+    "title": "Student Performance Predictor",
+    "titleClass": "",
+    "tags": [
+      {
+        "text": "AI/ML",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "Python",
+        "className": "rounded-tag opposite"
+      },
+      {
+        "text": "Flask",
+        "className": "rounded-tag opposite"
+      }
+    ],
+    "description": "Flask app that predicts final marks from study hours, attendance and previous marks using Linear Regression, trained on a small sample dataset.",
+    "width": 1365,
+    "height": 717,
+    "links": {
+      "github": null,
+      "live": null
+    },
+    "overview": "A machine learning web app that predicts a student's final marks from study hours, attendance percentage and previous marks, using a Linear Regression model.",
+    "features": [
+      "Simple input form for the three factors",
+      "Instant predicted final marks",
+      "Linear Regression model saved with Pickle and loaded by the Flask app"
+    ],
+    "stack": [
+      "Python",
+      "Flask",
+      "Pandas",
+      "NumPy",
+      "scikit-learn",
+      "HTML",
+      "CSS"
+    ],
+    "status": "Learning project trained on a small sample dataset, so predictions are illustrative."
+  },
+  {
+    "href": "/img/projects/zaalima-python-projects.jpg",
+    "dataImage": "/img/projects/zaalima-python-projects.jpg",
+    "src": "/img/projects/zaalima-python-projects.jpg",
+    "alt": "Media Processing Service API documentation page",
+    "figcaptionClass": "gallery__descr opposite",
+    "title": "Zaalima Python Projects",
+    "titleClass": "opposite",
+    "tags": [
+      {
+        "text": "Python",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "FastAPI",
+        "className": "rounded-tag"
+      },
+      {
+        "text": "Team project",
+        "className": "rounded-tag"
+      }
+    ],
+    "description": "Team internship repository from the Zaalima Python program, led by Sugunesh Loganathan, including a media processing microservice.",
+    "width": 1365,
+    "height": 767,
+    "links": {
+      "github": "https://github.com/sugunesh-loganathan/zaalima-python-projects",
+      "live": null
+    },
+    "overview": "The team repository from the Zaalima Python internship program, led by Sugunesh Loganathan. Project 1 is a Distributed Media Processing Microservice that accepts secure file uploads and processes images in the background while tracking job status.",
+    "features": [
+      "Secure file uploads",
+      "Background image processing",
+      "Asynchronous task execution",
+      "Job status tracking"
+    ],
+    "stack": [
+      "FastAPI",
+      "Celery",
+      "RabbitMQ",
+      "Redis",
+      "AWS S3",
+      "Pillow"
+    ],
+    "status": "Team project; the repository belongs to the team lead."
+  }
+]

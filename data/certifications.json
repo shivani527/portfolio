@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Python Development Training Certificate",
+    "issuer": "Zaalima Development Private Limited",
+    "date": "May – Aug 2026",
+    "note": "",
+    "file": "/certificates/zaalima-python-development-training.pdf",
+    "group": "experience"
+  },
+  {
+    "title": "Python Development Internship Certificate",
+    "issuer": "Zaalima Development Private Limited",
+    "date": "May – Aug 2026",
+    "note": "",
+    "file": "/certificates/zaalima-python-development-internship.pdf",
+    "group": "experience"
+  },
+  {
+    "title": "Deloitte Data Analytics Job Simulation",
+    "issuer": "Deloitte, via Forage",
+    "date": "Jun 2026",
+    "note": "Job simulation",
+    "file": "/certificates/deloitte-data-analytics-simulation.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "Certification Program in Service Desk Operations",
+    "issuer": "EduBridge",
+    "date": "May 2026",
+    "note": "Score 75%, grade B+",
+    "file": "/certificates/edubridge-service-desk-operations.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "CS250: Python for Data Science",
+    "issuer": "Saylor Academy",
+    "date": "Mar 2026",
+    "note": "67 hours, grade 90.37%",
+    "file": "/certificates/saylor-cs250-python-for-data-science.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "Python Essentials 1",
+    "issuer": "Cisco Networking Academy",
+    "date": "Feb 2026",
+    "note": "",
+    "file": "/certificates/cisco-python-essentials-1.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "Data Engineering on AWS – Foundations",
+    "issuer": "AWS Training & Certification",
+    "date": "Dec 2025",
+    "note": "",
+    "file": "/certificates/aws-data-engineering-foundations.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "Analyzing Data with Excel",
+    "issuer": "IBM, via edX",
+    "date": "Oct 2025",
+    "note": "",
+    "file": "/certificates/ibm-analyzing-data-with-excel.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "Python Basics for Data Science (PY0101EN)",
+    "issuer": "IBM, via edX",
+    "date": "Sep 2025",
+    "note": "",
+    "file": "/certificates/ibm-python-basics-for-data-science.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "GenAI Powered Data Analytics Job Simulation",
+    "issuer": "Tata, via Forage",
+    "date": "Sep 2025",
+    "note": "Job simulation",
+    "file": "/certificates/tata-genai-data-analytics-simulation.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "ET AI Hackathon 2.0",
+    "issuer": "The Economic Times",
+    "date": "Aug 2026",
+    "note": "Certificate of participation",
+    "file": "/certificates/et-ai-hackathon-2-participation.pdf",
+    "group": "participation"
+  },
+  {
+    "title": "Mock Tests & Interviews: Your Launchpad to a Dream Job",
+    "issuer": "Unstop",
+    "date": "",
+    "note": "Certificate of participation",
+    "file": "/certificates/unstop-mock-tests-and-interviews.pdf",
+    "group": "participation"
+  }
+]

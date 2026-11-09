@@ -1,0 +1,40 @@
+[
+  {
+    "title": "AI/ML Engineer",
+    "tags": [
+      "Python",
+      "scikit-learn",
+      "NLTK"
+    ],
+    "text": "Machine learning projects including customer churn prediction and a student performance predictor."
+  },
+  {
+    "title": "Python Developer",
+    "tags": [
+      "Python",
+      "Flask",
+      "FastAPI"
+    ],
+    "text": "Python Development internship and training at Zaalima Development, plus Python web apps built with Flask and FastAPI."
+  },
+  {
+    "title": "Full-Stack Developer",
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Node.js"
+    ],
+    "text": "Front-end and back-end projects, including the Course Craft e-learning site and the VELOOP Rewards demo, which is still in progress."
+  },
+  {
+    "title": "Data Analyst",
+    "tags": [
+      "SQL",
+      "Pandas",
+      "Power BI",
+      "Excel"
+    ],
+    "text": "Data analysis courses and job simulations from IBM, Saylor, Deloitte and Tata."
+  }
+]

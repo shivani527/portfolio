@@ -1,0 +1,11 @@
+[
+  { "href": "#home", "caption": "Home", "icon": "ph-bold ph-house-simple" },
+  {
+    "href": "#projects",
+    "caption": "Projects",
+    "icon": "ph-bold ph-squares-four"
+  },
+  { "href": "#about", "caption": "About Me", "icon": "ph-bold ph-user" },
+  { "href": "#resume", "caption": "Resume", "icon": "ph-bold ph-article" },
+  { "href": "#contact", "caption": "Contact", "icon": "ph-bold ph-envelope" }
+]

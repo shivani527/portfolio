@@ -1,0 +1,35 @@
+[
+  {
+    "date": "May – Aug 2026",
+    "title": "Python Developer Intern",
+    "type": "Internship",
+    "agency": {
+      "name": "Zaalima Development Private Limited",
+      "link": ""
+    },
+    "description": "Python Development internship. The certificate of internship is available below.",
+    "certificate": "/certificates/zaalima-python-development-internship.pdf"
+  },
+  {
+    "date": "May – Aug 2026",
+    "title": "Python Developer Trainee",
+    "type": "Training",
+    "agency": {
+      "name": "Zaalima Development Private Limited",
+      "link": ""
+    },
+    "description": "Python Development training program. The certificate of training is available below.",
+    "certificate": "/certificates/zaalima-python-development-training.pdf"
+  },
+  {
+    "date": "Completed",
+    "title": "Training: Python and Data Analysis",
+    "type": "Training",
+    "agency": {
+      "name": "Technex Cloud Networks Pvt Ltd",
+      "link": ""
+    },
+    "description": "Practical course covering Python, data analysis, SQL, Power BI and Excel, with hands-on work on dashboards and pivot tables.",
+    "certificate": ""
+  }
+]

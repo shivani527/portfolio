@@ -1,0 +1,51 @@
+[
+  {
+    "group": "Programming languages",
+    "items": [
+      "Python",
+      "C",
+      "JavaScript"
+    ]
+  },
+  {
+    "group": "Web development",
+    "items": [
+      "HTML",
+      "CSS",
+      "Bootstrap",
+      "Node.js",
+      "Flask",
+      "FastAPI"
+    ]
+  },
+  {
+    "group": "Databases",
+    "items": [
+      "SQL",
+      "MySQL"
+    ]
+  },
+  {
+    "group": "Data analytics",
+    "items": [
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Power BI",
+      "Excel"
+    ]
+  },
+  {
+    "group": "AI and machine learning",
+    "items": [
+      "scikit-learn",
+      "NLTK"
+    ]
+  },
+  {
+    "group": "Developer tools",
+    "items": [
+      "GitHub"
+    ]
+  }
+]

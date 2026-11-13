@@ -7,46 +7,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function InitScroll() {
   useEffect(() => {
-    gsap.utils.toArray<HTMLElement>(".animate-in-up").forEach((el) => {
-      const delay = parseFloat(el.dataset.delay || "0");
-      const duration = parseFloat(el.dataset.duration || "0.5");
-      gsap.fromTo(
-        el,
-        {
-          opacity: 0,
-          y: 50,
-          ease: "sine",
-        },
-        {
-          y: 0,
-          delay,
-          duration,
-
-          opacity: 1,
-          scrollTrigger: {
-            once: true,
-            trigger: el,
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    });
-
-    gsap.fromTo(
-      document.body,
-      {
-        opacity: 0,
-
-        ease: "sine",
-      },
-      {
-        opacity: 1,
-        scrollTrigger: {
-          trigger: document.body,
-          toggleActions: "play none none reverse",
-        },
-      }
+    const els = Array.from(
+      document.querySelectorAll<HTMLElement>(".animate-in-up")
     );
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    let io: IntersectionObserver | undefined;
+
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      els.forEach((el) => el.classList.add("is-in"));
+    } else {
+      // One lightweight observer reveals each block as it nears the screen
+      io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target as HTMLElement;
+            const delay = Math.min(
+              parseFloat(el.dataset.delay || "0") * 0.4,
+              0.25
+            );
+            if (delay) el.style.animationDelay = `${delay}s`;
+            el.classList.add("is-in");
+            io?.unobserve(el);
+          });
+        },
+        { rootMargin: "0px 0px -3% 0px" }
+      );
+      els.forEach((el) => io!.observe(el));
+    }
 
     gsap.utils.toArray<HTMLElement>(".animate-fade").forEach((el) => {
       gsap.fromTo(
@@ -55,11 +45,11 @@ export default function InitScroll() {
           opacity: 0,
 
           ease: "linear",
-          duration: 1.6,
+          duration: 0.6,
         },
         {
           opacity: 1,
-          duration: 1.6,
+          duration: 0.6,
           scrollTrigger: {
             trigger: document.body,
             toggleActions: "play none none reverse",
@@ -79,6 +69,7 @@ export default function InitScroll() {
         { delay: 0.5, opacity: 1, x: 0, duration: 1, ease: "sine" }
       );
     });
+    return () => io?.disconnect();
   }, []);
   return <></>;
 }

@@ -5,7 +5,7 @@ import Header1 from "@/components/headers/Header1";
 import Intro from "@/components/intro/Intro";
 import Portfolio from "@/components/portfolio/Portfolio";
 import Profile from "@/components/profile/Profile";
-import Certifications from "@/components/resume/Certifications";
+import Certifications from "@/components/resume/CertificatesSection";
 import Education from "@/components/resume/Education";
 import Experience from "@/components/resume/Experience";
 import ResumeHeading from "@/components/resume/ResumeHeading";

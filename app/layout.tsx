@@ -3,7 +3,6 @@ import "../public/css/styles.css";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import InitScroll from "@/components/scroll/InitScroll";
-import Script from "next/script"; // ✅ use next/script
 import LenisSmoothScroll from "@/components/scroll/LenisSmoothScroll";
 export const metadata: Metadata = {
   title: "Kokkula Shivani | AI/ML, Python, Full-Stack & Data Analytics Fresher",
@@ -39,10 +38,14 @@ export default function RootLayout({
       suppressHydrationWarning
       className="no-touch"
     >
+      <head>
+        {/* Sets the saved colour scheme before first paint (avoids a light/dark flash) */}
+        <script
+          id="set-color-scheme"
+          dangerouslySetInnerHTML={{ __html: setColorSchemeScript }}
+        />
+      </head>
       <body>
-        <Script id="set-color-scheme" strategy="beforeInteractive">
-          {setColorSchemeScript}
-        </Script>
         {children}
         <LenisSmoothScroll />
         <InitScroll />

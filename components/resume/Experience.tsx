@@ -1,3 +1,5 @@
+import certs from "@/data/certifications.json";
+import CertificateButton, { type Cert } from "./CertificateButton";
 import experienceItems from "@/data/experiences.json";
 
 type ExperienceItem = {
@@ -11,6 +13,8 @@ type ExperienceItem = {
   type: string;
   certificate?: string;
 };
+
+const certData = certs as Cert[];
 
 export default function Experience() {
   return (
@@ -55,15 +59,11 @@ export default function Experience() {
               </p>
               {item.certificate ? (
                 <p className="small resume-lines__descr animate-in-up">
-                  <a
-                    href={item.certificate}
-                    className="text-link-bold"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`View certificate: ${item.title} (PDF, opens in a new tab)`}
-                  >
-                    View certificate (PDF)
-                  </a>
+                  {certData.find((c) => c.file === item.certificate) ? (
+                    <CertificateButton
+                      cert={certData.find((c) => c.file === item.certificate)!}
+                    />
+                  ) : null}
                 </p>
               ) : null}
             </div>

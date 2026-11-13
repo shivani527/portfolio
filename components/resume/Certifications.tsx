@@ -1,60 +1,135 @@
-import certs from "@/data/certifications.json";
-
-type Cert = {
-  title: string;
-  issuer: string;
-  date: string;
-  note: string;
-  file: string;
-  group: string;
-};
-
-const sections = [
-  { id: "certifications", heading: "Certifications" },
-  { id: "participation", heading: "Participation and achievements" },
-];
-
-export default function Certifications() {
-  return (
-    <>
-      {sections.map((sec) => (
-        <div className="content__block block-large" key={sec.id}>
-          <div className="section-h3">
-            <h3 className="h3__title animate-in-up">{sec.heading}</h3>
-          </div>
-          <div className="container-fluid p-0 resume-lines">
-            {(certs as Cert[])
-              .filter((c) => c.group === sec.id)
-              .map((c) => (
-                <div className="row g-0 resume-lines__item animate-in-up" key={c.file}>
-                  <div className="col-12 col-md-2">
-                    <span className="resume-lines__date animate-in-up">{c.date}</span>
-                  </div>
-                  <div className="col-12 col-md-5">
-                    <h5 className="resume-lines__title animate-in-up">{c.title}</h5>
-                    <p className="resume-lines__source animate-in-up">{c.issuer}</p>
-                  </div>
-                  <div className="col-12 col-md-5">
-                    {c.note ? (
-                      <p className="small resume-lines__descr animate-in-up">{c.note}</p>
-                    ) : null}
-                    <p className="small resume-lines__descr animate-in-up">
-                      <a
-                        href={c.file}
-                        className="text-link-bold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`View certificate: ${c.title} (PDF, opens in a new tab)`}
-                      >
-                        View certificate (PDF)
-                      </a>
-                    </p>
-                  </div>
-                </div>
-              ))}
-          </div>
-        </div>
-      ))}
-    </>
-  );
-}
+[
+  {
+    "title": "Python Development Training Certificate",
+    "issuer": "Zaalima Development Private Limited",
+    "date": "May – Aug 2026",
+    "note": "",
+    "file": "/certificates/zaalima-python-development-training.pdf",
+    "group": "experience",
+    "verificationCode": "92cce66775dca163bb2",
+    "verifyUrl": "https://certificate-verification.zaalima.in/",
+    "language": "Python"
+  },
+  {
+    "title": "Python Development Internship Certificate",
+    "issuer": "Zaalima Development Private Limited",
+    "date": "May – Aug 2026",
+    "note": "",
+    "file": "/certificates/zaalima-python-development-internship.pdf",
+    "group": "experience",
+    "verificationCode": "92cce66775dca163bb2",
+    "verifyUrl": "https://certificate-verification.zaalima.in/",
+    "language": "Python"
+  },
+  {
+    "title": "Deloitte Data Analytics Job Simulation",
+    "issuer": "Deloitte, via Forage",
+    "date": "Jun 2026",
+    "note": "Job simulation",
+    "file": "/certificates/deloitte-data-analytics-simulation.pdf",
+    "group": "certifications",
+    "userCode": "68b7e3d42bb5da6bda0207ef",
+    "enrolmentNumber": "JAxyjuDGWhjJzoGLs",
+    "period": "Oct 2025 – Jun 2026",
+    "tasks": [
+      "Data analysis",
+      "Forensic technology"
+    ]
+  },
+  {
+    "title": "Certification Program in Service Desk Operations",
+    "issuer": "EduBridge",
+    "date": "May 2026",
+    "note": "Score 75%, grade B+",
+    "file": "/certificates/edubridge-service-desk-operations.pdf",
+    "group": "certifications",
+    "score": "75% (grade B+)",
+    "enrolmentNumber": "EBEON01261272262",
+    "verifyUrl": "https://www.edubridgeindia.com/certificate-detail?enrollment_number=EBEON01261272262"
+  },
+  {
+    "title": "CS250: Python for Data Science",
+    "issuer": "Saylor Academy",
+    "date": "Mar 2026",
+    "note": "67 hours, grade 90.37%",
+    "file": "/certificates/saylor-cs250-python-for-data-science.pdf",
+    "group": "certifications",
+    "score": "90.37%",
+    "verificationCode": "7879219166SK",
+    "verifyUrl": "https://learn.saylor.org/admin/tool/certificate/index.php?code=7879219166SK",
+    "language": "Python",
+    "period": "67 hours (6.7 CEUs)"
+  },
+  {
+    "title": "Python Essentials 1",
+    "issuer": "Cisco Networking Academy",
+    "date": "Feb 2026",
+    "note": "",
+    "file": "/certificates/cisco-python-essentials-1.pdf",
+    "group": "certifications",
+    "language": "Python"
+  },
+  {
+    "title": "Data Engineering on AWS – Foundations",
+    "issuer": "AWS Training & Certification",
+    "date": "Dec 2025",
+    "note": "",
+    "file": "/certificates/aws-data-engineering-foundations.pdf",
+    "group": "certifications"
+  },
+  {
+    "title": "Analyzing Data with Excel",
+    "issuer": "IBM, via edX",
+    "date": "Oct 2025",
+    "note": "",
+    "file": "/certificates/ibm-analyzing-data-with-excel.pdf",
+    "group": "certifications",
+    "verificationCode": "f312d7b43ea1440ba4845de1b670f3f5",
+    "verifyUrl": "https://courses.edx.org/certificates/f312d7b43ea1440ba4845de1b670f3f5"
+  },
+  {
+    "title": "Python Basics for Data Science (PY0101EN)",
+    "issuer": "IBM, via edX",
+    "date": "Sep 2025",
+    "note": "",
+    "file": "/certificates/ibm-python-basics-for-data-science.pdf",
+    "group": "certifications",
+    "verificationCode": "82aa7fda137e42ff9e76553f4f38ef3f",
+    "verifyUrl": "https://courses.edx.org/certificates/82aa7fda137e42ff9e76553f4f38ef3f",
+    "language": "Python"
+  },
+  {
+    "title": "GenAI Powered Data Analytics Job Simulation",
+    "issuer": "Tata, via Forage",
+    "date": "Sep 2025",
+    "note": "Job simulation",
+    "file": "/certificates/tata-genai-data-analytics-simulation.pdf",
+    "group": "certifications",
+    "userCode": "68b7e3d42bb5da6bda0207ef",
+    "enrolmentNumber": "KY4c9aBN39run77Z8",
+    "period": "Sep 2025",
+    "tasks": [
+      "Exploratory data analysis and risk profiling",
+      "Predicting delinquency with AI",
+      "Business report and data storytelling for collections strategy",
+      "Implementing an AI-driven collections strategy"
+    ]
+  },
+  {
+    "title": "ET AI Hackathon 2.0",
+    "issuer": "The Economic Times",
+    "date": "Aug 2026",
+    "note": "Certificate of participation",
+    "file": "/certificates/et-ai-hackathon-2-participation.pdf",
+    "group": "participation"
+  },
+  {
+    "title": "Mock Tests & Interviews: Your Launchpad to a Dream Job",
+    "issuer": "Unstop",
+    "date": "",
+    "note": "Certificate of participation",
+    "file": "/certificates/unstop-mock-tests-and-interviews.pdf",
+    "group": "participation",
+    "verifyUrl": "https://unstop.com/certificate-preview/100505cb-5c94-408e-a0ab-c9823b06978f"
+  }
+]

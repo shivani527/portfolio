@@ -145,10 +145,24 @@ export default function Contact() {
       setSubmitted(false);
     }
     if (fsState.errors) {
-      toast.error("❌ Oops! Something went wrong. Please try again.", {
-        position: "top-right",
-        autoClose: 4000,
-      });
+      const formErrors = fsState.errors.getFormErrors();
+      console.error("Formspree error:", formErrors, fsState.errors.getAllFieldErrors());
+      const first = formErrors[0];
+      const detail =
+        first?.code === "FORM_NOT_FOUND"
+          ? "form ID not found"
+          : first?.code === "INACTIVE"
+            ? "the form is inactive (confirm your Formspree email)"
+            : first?.code === "BLOCKED"
+              ? "the submission was blocked"
+              : first?.message || "";
+      toast.error(
+        `❌ Oops! Something went wrong${detail ? `: ${detail}` : ""}. Please try again.`,
+        {
+          position: "top-right",
+          autoClose: 6000,
+        }
+      );
     }
   }, [fsState.succeeded, fsState.errors]);
 
@@ -189,10 +203,25 @@ export default function Contact() {
 
     // Do not send anything until the owner's own Formspree ID is configured
     if (!FORM_CONFIGURED) {
-      toast.error(
-        "The contact form is not set up yet. Please email me directly.",
-        { position: "top-right" }
-      );
+      // No Formspree ID yet: open the visitor's email app with the message filled in
+      const data = new FormData(e.currentTarget);
+      const field = (k: string) => String(data.get(k) ?? "").trim();
+      const body = [
+        field("message"),
+        "",
+        `Name: ${field("name")}`,
+        field("company") ? `Company: ${field("company")}` : "",
+        `Email: ${field("email")}`,
+        field("phone") ? `Phone: ${field("phone")}` : "",
+      ]
+        .filter((l, i) => l !== "" || i === 1)
+        .join("\n");
+      toast.info("Opening your email app to send this message.", {
+        position: "top-right",
+      });
+      window.location.href = `mailto:shivanikokkula527@gmail.com?subject=${encodeURIComponent(
+        "Message from your portfolio"
+      )}&body=${encodeURIComponent(body)}`;
       return;
     }
 

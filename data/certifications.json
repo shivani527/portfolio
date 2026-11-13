@@ -5,7 +5,10 @@
     "date": "May – Aug 2026",
     "note": "",
     "file": "/certificates/zaalima-python-development-training.pdf",
-    "group": "experience"
+    "group": "experience",
+    "verificationCode": "92cce66775dca163bb2",
+    "verifyUrl": "https://certificate-verification.zaalima.in/",
+    "language": "Python"
   },
   {
     "title": "Python Development Internship Certificate",
@@ -13,7 +16,10 @@
     "date": "May – Aug 2026",
     "note": "",
     "file": "/certificates/zaalima-python-development-internship.pdf",
-    "group": "experience"
+    "group": "experience",
+    "verificationCode": "92cce66775dca163bb2",
+    "verifyUrl": "https://certificate-verification.zaalima.in/",
+    "language": "Python"
   },
   {
     "title": "Deloitte Data Analytics Job Simulation",
@@ -21,7 +27,9 @@
     "date": "Jun 2026",
     "note": "Job simulation",
     "file": "/certificates/deloitte-data-analytics-simulation.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "verificationCode": "JAxyjuDGWhjJzoGLs",
+    "userCode": "68b7e3d42bb5da6bda0207ef"
   },
   {
     "title": "Certification Program in Service Desk Operations",
@@ -29,7 +37,10 @@
     "date": "May 2026",
     "note": "Score 75%, grade B+",
     "file": "/certificates/edubridge-service-desk-operations.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "score": "75% (grade B+)",
+    "enrolmentNumber": "EBEON01261272262",
+    "verifyUrl": "https://www.edubridgeindia.com/certificate-detail?enrollment_number=EBEON01261272262"
   },
   {
     "title": "CS250: Python for Data Science",
@@ -37,7 +48,12 @@
     "date": "Mar 2026",
     "note": "67 hours, grade 90.37%",
     "file": "/certificates/saylor-cs250-python-for-data-science.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "score": "90.37%",
+    "hours": "67 hours (6.7 CEUs)",
+    "verificationCode": "7879219166SK",
+    "verifyUrl": "https://learn.saylor.org/admin/tool/certificate/index.php?code=7879219166SK",
+    "language": "Python"
   },
   {
     "title": "Python Essentials 1",
@@ -45,7 +61,8 @@
     "date": "Feb 2026",
     "note": "",
     "file": "/certificates/cisco-python-essentials-1.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "language": "Python"
   },
   {
     "title": "Data Engineering on AWS – Foundations",
@@ -61,7 +78,9 @@
     "date": "Oct 2025",
     "note": "",
     "file": "/certificates/ibm-analyzing-data-with-excel.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "verificationCode": "f312d7b43ea1440ba4845de1b670f3f5",
+    "verifyUrl": "https://courses.edx.org/certificates/f312d7b43ea1440ba4845de1b670f3f5"
   },
   {
     "title": "Python Basics for Data Science (PY0101EN)",
@@ -69,7 +88,10 @@
     "date": "Sep 2025",
     "note": "",
     "file": "/certificates/ibm-python-basics-for-data-science.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "verificationCode": "82aa7fda137e42ff9e76553f4f38ef3f",
+    "verifyUrl": "https://courses.edx.org/certificates/82aa7fda137e42ff9e76553f4f38ef3f",
+    "language": "Python"
   },
   {
     "title": "GenAI Powered Data Analytics Job Simulation",
@@ -77,7 +99,9 @@
     "date": "Sep 2025",
     "note": "Job simulation",
     "file": "/certificates/tata-genai-data-analytics-simulation.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "verificationCode": "KY4c9aBN39run77Z8",
+    "userCode": "68b7e3d42bb5da6bda0207ef"
   },
   {
     "title": "ET AI Hackathon 2.0",
@@ -93,6 +117,7 @@
     "date": "",
     "note": "Certificate of participation",
     "file": "/certificates/unstop-mock-tests-and-interviews.pdf",
-    "group": "participation"
+    "group": "participation",
+    "verifyUrl": "https://unstop.com/certificate-preview/100505cb-5c94-408e-a0ab-c9823b06978f"
   }
 ]

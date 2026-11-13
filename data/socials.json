@@ -8,5 +8,15 @@
     "icon": "ph-bold ph-linkedin-logo",
     "link": "https://www.linkedin.com/in/shivanikokkula/",
     "label": "LinkedIn"
+  },
+  {
+    "icon": "ph-bold ph-code",
+    "link": "https://www.hackerrank.com/dashboard",
+    "label": "HackerRank"
+  },
+  {
+    "icon": "ph-bold ph-terminal-window",
+    "link": "https://www.codechef.com/dashboard",
+    "label": "CodeChef"
   }
 ]

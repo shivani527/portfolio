@@ -74,10 +74,30 @@ html {
 }
 
 .promo-image,
-.animate-in-up,
-.animate-fade,
-body {
+.animate-in-up:not(.is-in),
+.animate-fade {
   opacity: 0;
+}
+
+.animate-in-up.is-in {
+  animation: rise-in 0.4s ease-out backwards;
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promo-image,
+  .animate-in-up:not(.is-in),
+  .animate-fade {
+    opacity: 1;
+  }
+  .animate-in-up.is-in {
+    animation: none;
+  }
 }
 
 /* Career-focus cards have no image, so let them size to their content */
@@ -146,4 +166,88 @@ body {
 /* Keeps the tag overlay on the image, not on the whole card */
 .project-media {
   position: relative;
+}
+
+/* Certificate details pop-up */
+.cert-open {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+}
+.cert-dialog {
+  border: 1px solid var(--border-color, rgba(128, 128, 140, 0.35));
+  border-radius: 2rem;
+  padding: 0;
+  width: min(92vw, 560px);
+  max-height: 88vh;
+  background: var(--base-tint);
+  color: var(--t-medium);
+  overflow: hidden;
+}
+.cert-dialog::backdrop {
+  background: rgba(10, 10, 16, 0.6);
+}
+.cert-dialog__panel {
+  position: relative;
+  padding: 2.4rem 2.4rem 2rem;
+  max-height: 88vh;
+  overflow-y: auto;
+}
+.cert-dialog__close {
+  position: absolute;
+  top: 0.8rem;
+  right: 1.2rem;
+  background: none;
+  border: 0;
+  font-size: 2.8rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--t-bright);
+}
+.cert-dialog__title {
+  margin: 0 3rem 1.4rem 0;
+  color: var(--t-bright);
+}
+.cert-dialog__list {
+  margin: 0;
+}
+.cert-dialog__row {
+  display: flex;
+  gap: 1.2rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgba(128, 128, 140, 0.25);
+}
+.cert-dialog__row dt {
+  flex: 0 0 12rem;
+  font-weight: 600;
+  color: var(--t-bright);
+}
+.cert-dialog__row dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.cert-dialog__note {
+  margin-top: 1rem;
+}
+.cert-dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
+}
+.cert-dialog__row dd a {
+  color: var(--t-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}
+.cert-dialog__tasks {
+  margin: 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+}
+.cert-dialog__tasks li {
+  margin-bottom: 0.25rem;
 }

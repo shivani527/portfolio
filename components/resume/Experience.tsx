@@ -58,13 +58,13 @@ export default function Experience() {
                 {item.description}
               </p>
               {item.certificate ? (
-                <p className="small resume-lines__descr animate-in-up">
+                <div className="small resume-lines__descr animate-in-up">
                   {certData.find((c) => c.file === item.certificate) ? (
                     <CertificateButton
                       cert={certData.find((c) => c.file === item.certificate)!}
                     />
                   ) : null}
-                </p>
+                </div>
               ) : null}
             </div>
           </div>

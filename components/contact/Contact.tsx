@@ -21,12 +21,25 @@ type FormErrors = Partial<Record<keyof FormData, string>>;
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 const phoneRe = /^[+\d][\d\s\-().]{6,}$/; // simple & forgiving
 
-// Formspree form ID comes from the environment (set NEXT_PUBLIC_FORMSPREE_FORM_ID
-// in .env.local and in your hosting dashboard). Until it is set, the
-// placeholder below is used and submissions are blocked client-side.
+// Formspree form ID comes from the environment (NEXT_PUBLIC_FORMSPREE_FORM_ID,
+// set in .env.local and in your hosting dashboard). useForm() adds the
+// "https://formspree.io/f/" prefix itself, so it must receive only the ID.
+// This accepts either the bare ID ("abcd1234") or the full endpoint URL
+// ("https://formspree.io/f/abcd1234") and always returns just the ID.
+function normalizeFormspreeId(raw?: string): string {
+  if (!raw) return "";
+  let v = raw.trim().replace(/^["']+|["']+$/g, "");
+  // Use the LAST "/f/<id>" so an accidentally doubled URL still resolves correctly
+  const urls = [...v.matchAll(/formspree\.io\/f\/([A-Za-z0-9_-]+)/gi)];
+  if (urls.length) return urls[urls.length - 1][1];
+  v = v.replace(/^\/?f\//, "").replace(/[/?#].*$/, "");
+  return /^[A-Za-z0-9_-]+$/.test(v) ? v : "";
+}
+
 const FORMSPREE_PLACEHOLDER = "YOUR_FORMSPREE_FORM_ID";
 const FORMSPREE_FORM_ID =
-  process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID || FORMSPREE_PLACEHOLDER;
+  normalizeFormspreeId(process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID) ||
+  FORMSPREE_PLACEHOLDER;
 const FORM_CONFIGURED = FORMSPREE_FORM_ID !== FORMSPREE_PLACEHOLDER;
 
 export default function Contact() {
@@ -155,7 +168,9 @@ export default function Contact() {
             ? "the form is inactive (confirm your Formspree email)"
             : first?.code === "BLOCKED"
               ? "the submission was blocked"
-              : first?.message || "";
+              : /failed to fetch|network/i.test(first?.message || "")
+                ? "network problem, please check your connection"
+                : first?.message || "";
       toast.error(
         `❌ Oops! Something went wrong${detail ? `: ${detail}` : ""}. Please try again.`,
         {
@@ -169,6 +184,7 @@ export default function Contact() {
   // ---- submit ----
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (fsState.submitting) return; // ignore clicks while a request is in progress
 
     // mark submit + touch all to reveal empties
     setSubmitted(true);

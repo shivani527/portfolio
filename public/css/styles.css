@@ -251,3 +251,242 @@ html {
 .cert-dialog__tasks li {
   margin-bottom: 0.25rem;
 }
+
+/* ---------- Projects: consistent 16:9 thumbnails ---------- */
+.project-media .gallery__link {
+  aspect-ratio: 16 / 9;
+}
+.project-media .gallery__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.project-media .gallery__link .picture {
+  background-size: cover;
+  background-position: center;
+}
+
+/* ---------- One technology badge style for every project (light and dark) ---------- */
+.rounded-tag.tech-badge,
+.gallery__descr .rounded-tag.tech-badge,
+.gallery__descr .rounded-tag.opposite.tech-badge {
+  background-color: var(--base-tint);
+  color: var(--t-bright);
+  border: 1px solid var(--stroke-elements);
+  height: 3.4rem;
+  padding: 0 1.4rem;
+  margin: 0.5rem 1rem 0.5rem 0;
+  border-radius: var(--_radius-s);
+  font: normal 400 1.5rem/1 var(--_font-default);
+}
+
+/* ---------- Project detail view ---------- */
+.project-dialog {
+  border: 1px solid var(--stroke-elements);
+  border-radius: 2.4rem;
+  padding: 0;
+  width: min(1180px, 94vw);
+  max-width: 94vw;
+  max-height: 92vh;
+  background: var(--base-tint);
+  color: var(--t-medium);
+  overflow: hidden;
+  animation: project-in 0.28s ease-out;
+}
+.project-dialog::backdrop {
+  background: rgba(10, 10, 16, 0.65);
+  animation: project-backdrop-in 0.28s ease-out;
+}
+.project-dialog.is-closing {
+  animation: project-out 0.22s ease-in forwards;
+}
+.project-dialog.is-closing::backdrop {
+  animation: project-backdrop-out 0.22s ease-in forwards;
+}
+@keyframes project-in {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+}
+@keyframes project-out {
+  to { opacity: 0; transform: translateY(12px) scale(0.98); }
+}
+@keyframes project-backdrop-in {
+  from { opacity: 0; }
+}
+@keyframes project-backdrop-out {
+  to { opacity: 0; }
+}
+.project-dialog__shell {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  max-height: 92vh;
+}
+.project-dialog__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.4rem;
+  background: var(--base-shade);
+  min-height: 0;
+}
+.project-dialog__img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 1.6rem;
+  animation: project-img-in 0.3s ease-out;
+}
+@keyframes project-img-in {
+  from { opacity: 0; }
+}
+.project-dialog__info {
+  padding: 3rem 3rem 2.4rem;
+  overflow-y: auto;
+  max-height: 92vh;
+}
+.project-dialog__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.4rem;
+  z-index: 2;
+  width: 4.4rem;
+  height: 4.4rem;
+  border: 1px solid var(--stroke-elements);
+  border-radius: 50%;
+  background: var(--base-tint);
+  color: var(--t-bright);
+  font-size: 2.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.project-dialog__count {
+  margin-bottom: 1rem;
+  color: var(--t-muted);
+}
+.project-dialog__title {
+  margin: 1rem 0 1.2rem;
+  color: var(--t-bright);
+}
+.project-dialog__text {
+  margin-bottom: 1.4rem;
+}
+.project-dialog__info h6 {
+  margin: 1.6rem 0 0.6rem;
+  color: var(--t-bright);
+}
+.project-dialog__list {
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+.project-dialog__list li {
+  margin-bottom: 0.4rem;
+}
+.project-dialog__status {
+  margin-top: 1.4rem;
+}
+.project-dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+.project-dialog__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--stroke-elements);
+}
+.project-dialog__navbtn {
+  background: none;
+  border: 0;
+  padding: 0.4rem 0;
+  font: inherit;
+  color: var(--t-bright);
+  cursor: pointer;
+}
+.project-dialog__navbtn:hover {
+  color: var(--t-accent);
+}
+@media (max-width: 900px) {
+  .project-dialog {
+    border-radius: 1.8rem;
+  }
+  .project-dialog__shell {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+  .project-dialog__media {
+    padding: 1.6rem;
+  }
+  .project-dialog__img {
+    max-height: 45vh;
+  }
+  .project-dialog__info {
+    overflow: visible;
+    max-height: none;
+    padding: 2rem 2rem 1.8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-dialog,
+  .project-dialog::backdrop,
+  .project-dialog__img {
+    animation: none;
+  }
+}
+
+/* Compact tag overlay on project thumbnails; clicks pass through to the image */
+.project-media .gallery__descr {
+  left: 0.8rem;
+  width: calc(100% - 1.6rem);
+  padding: 1rem 1rem 0.8rem;
+  pointer-events: none;
+}
+@media only screen and (min-width: 1400px) {
+  .project-media .gallery__descr {
+    left: 0.8rem;
+    width: calc(100% - 1.6rem);
+  }
+}
+
+.project-dialog__text {
+  font-size: 1.7rem;
+  line-height: 1.55;
+}
+
+/* Project card link buttons (GitHub / Live demo) */
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.4rem 0 1rem;
+}
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3.6rem;
+  padding: 0 1.8rem;
+  border: 1px solid var(--stroke-elements);
+  border-radius: var(--_radius-s);
+  background: var(--base-tint);
+  color: var(--t-bright);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.project-link:hover,
+.project-link:focus-visible {
+  border-color: var(--t-accent);
+  color: var(--t-accent);
+}
+.project-link--live {
+  border-color: var(--t-accent);
+  color: var(--t-accent);
+}

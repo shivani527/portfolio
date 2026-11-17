@@ -2,7 +2,7 @@ import socials from "@/data/socials.json";
 import Image from "next/image";
 
 export default function Profile({
-  profileImage = "/img/avatars/kokkula-shivani.jpg",
+  profileImage = "/img/avatars/kokkula-shivani-illustration.webp",
 }) {
   return (
     <div id="avatar" className="avatar animate-fade">
@@ -53,11 +53,12 @@ export default function Profile({
           </div>
           <div className="avatar__image">
             <Image
-              alt="Portrait of Kokkula Shivani"
+              alt="Illustration of Kokkula Shivani at a desk with a laptop, surrounded by AI, data analytics, full-stack and Python icons"
               src={profileImage}
-              width={413}
-              height={531}
-              sizes="(max-width: 991px) 60vw, 300px"
+              width={800}
+              height={1067}
+              sizes="(max-width: 991px) 80vw, 600px"
+              quality={90}
               priority
             />
           </div>

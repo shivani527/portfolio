@@ -26,7 +26,7 @@
     "height": 477,
     "links": {
       "github": "https://github.com/shivani527/churn-prediction-app",
-      "live": null
+      "live": "https://churn-prediction-app-frontend.vercel.app/"
     },
     "overview": "Predicts whether a food-delivery customer is likely to stop ordering, using occupation, monthly income and survey answers about their delivery experience. A FastAPI backend serves the predictions and a plain HTML, CSS and JavaScript front end shows the result as a printed-style risk ticket.",
     "features": [
@@ -47,7 +47,7 @@
       "CSS",
       "JavaScript"
     ],
-    "status": "Working demo. The deployed version needs the trained model files added; no accuracy figures are published here."
+    "status": "Live demo available. Predictions use a clearly labelled rule-based demo mode when the trained model files are not loaded; no accuracy figures are published here."
   },
   {
     "href": "/img/projects/fake-news-detector.jpg",
@@ -76,7 +76,7 @@
     "height": 721,
     "links": {
       "github": "https://github.com/shivani527/fake-news-detector",
-      "live": null
+      "live": "https://veritas-desk-app.onrender.com/"
     },
     "overview": "A local misinformation-risk checker. You paste an article and it scores wording patterns such as sensational language, clickbait phrases, absolute claims and unverified source domains, then shows which signals matched. It is a prompt to take a second look, not a fact-checker.",
     "features": [
@@ -95,7 +95,7 @@
       "JavaScript",
       "NewsAPI"
     ],
-    "status": "Working locally. User accounts are not implemented and storage is a simple JSON file."
+    "status": "Live demo available; it may take a short while to wake up on the first visit. User accounts are not implemented and storage is a simple JSON file."
   },
   {
     "href": "/img/projects/veloop-rewards.png",
@@ -169,8 +169,8 @@
     "width": 1514,
     "height": 906,
     "links": {
-      "github": "https://github.com/shivani527/coursecraft",
-      "live": null
+      "github": "https://github.com/shivani527/course-craft",
+      "live": "https://shivani527.github.io/course-craft/"
     },
     "overview": "A multi-page front end for an online learning site that offers free programming courses. It has a home page with a course search bar, about, courses, course detail, features, team, testimonial and contact pages, and a sign-up form. It is built on a free HTML template, and the sample content on the pages is placeholder content.",
     "features": [
@@ -185,7 +185,7 @@
       "JavaScript",
       "Bootstrap"
     ],
-    "status": "Front end only. Counters, course names and contact details shown are demo content."
+    "status": "Live on GitHub Pages. Front end only; counters, course names and contact details shown are demo content."
   },
   {
     "href": "/img/projects/ai-citizen-fraud-shield.png",
@@ -246,11 +246,11 @@
     "titleClass": "opposite",
     "tags": [
       {
-        "text": "Python",
+        "text": "Web Development",
         "className": "rounded-tag"
       },
       {
-        "text": "Flask",
+        "text": "JavaScript",
         "className": "rounded-tag"
       },
       {
@@ -258,29 +258,31 @@
         "className": "rounded-tag"
       }
     ],
-    "description": "Flask web app that shows current weather for a searched city using the OpenWeatherMap API.",
+    "description": "Weather web app: search a city and see its current temperature, humidity, wind speed and conditions. The live version is a static page using the free Open-Meteo API.",
     "width": 1365,
     "height": 725,
     "links": {
-      "github": "https://github.com/shivani527/Wheather-app",
-      "live": null
+      "github": "https://github.com/shivani527/advanced-weather-app",
+      "live": "https://shivani527.github.io/advanced-weather-app/"
     },
-    "overview": "A small web app where you search for a city and see its current weather: temperature, humidity, wind speed and a short description with an icon, fetched from the OpenWeatherMap API.",
+    "overview": "A small web app where you search for a city and see its current weather: temperature, humidity, wind speed and a short description with an icon. The live site is a static page that calls the free Open-Meteo API directly. The repository also keeps the original Flask version built with the OpenWeatherMap API.",
     "features": [
-      "City search form",
-      "Temperature in Celsius, humidity and wind speed",
-      "Weather description and icon",
-      "Error message when a city is not found"
+      "City search with geocoding",
+      "Temperature in Celsius, humidity and wind speed in km/h",
+      "Weather description and icon with last-updated time",
+      "Message shown when a city is not found",
+      "Original Flask version included in the repository"
     ],
     "stack": [
+      "JavaScript",
+      "HTML",
+      "CSS",
+      "Open-Meteo API",
       "Python",
       "Flask",
-      "Requests",
-      "OpenWeatherMap API",
-      "HTML",
-      "CSS"
+      "OpenWeatherMap API"
     ],
-    "status": "Working locally."
+    "status": "Live on GitHub Pages."
   },
   {
     "href": "/img/projects/student-performance-predictor.jpg",
@@ -309,7 +311,7 @@
     "height": 717,
     "links": {
       "github": null,
-      "live": null
+      "live": "https://student-performance-prediction-1aze.onrender.com/"
     },
     "overview": "A machine learning web app that predicts a student's final marks from study hours, attendance percentage and previous marks, using a Linear Regression model.",
     "features": [
@@ -326,7 +328,7 @@
       "HTML",
       "CSS"
     ],
-    "status": "Learning project trained on a small sample dataset, so predictions are illustrative."
+    "status": "Live demo available; it may take a short while to wake up on the first visit. Learning project trained on a small sample dataset, so predictions are illustrative."
   },
   {
     "href": "/img/projects/zaalima-python-projects.jpg",

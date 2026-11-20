@@ -8,7 +8,10 @@
     "group": "experience",
     "verificationCode": "92cce66775dca163bb2",
     "verifyUrl": "https://certificate-verification.zaalima.in/",
-    "language": "Python"
+    "language": "Python",
+    "preview": "/certificates/previews/zaalima-python-development-training.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 990
   },
   {
     "title": "Python Development Internship Certificate",
@@ -19,7 +22,10 @@
     "group": "experience",
     "verificationCode": "92cce66775dca163bb2",
     "verifyUrl": "https://certificate-verification.zaalima.in/",
-    "language": "Python"
+    "language": "Python",
+    "preview": "/certificates/previews/zaalima-python-development-internship.jpeg",
+    "previewWidth": 1076,
+    "previewHeight": 1521
   },
   {
     "title": "Deloitte Data Analytics Job Simulation",
@@ -28,8 +34,16 @@
     "note": "Job simulation",
     "file": "/certificates/deloitte-data-analytics-simulation.pdf",
     "group": "certifications",
-    "verificationCode": "JAxyjuDGWhjJzoGLs",
-    "userCode": "68b7e3d42bb5da6bda0207ef"
+    "userCode": "68b7e3d42bb5da6bda0207ef",
+    "enrolmentNumber": "JAxyjuDGWhjJzoGLs",
+    "period": "Oct 2025 – Jun 2026",
+    "tasks": [
+      "Data analysis",
+      "Forensic technology"
+    ],
+    "preview": "/certificates/previews/deloitte-data-analytics-simulation.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 989
   },
   {
     "title": "Certification Program in Service Desk Operations",
@@ -40,7 +54,10 @@
     "group": "certifications",
     "score": "75% (grade B+)",
     "enrolmentNumber": "EBEON01261272262",
-    "verifyUrl": "https://www.edubridgeindia.com/certificate-detail?enrollment_number=EBEON01261272262"
+    "verifyUrl": "https://www.edubridgeindia.com/certificate-detail?enrollment_number=EBEON01261272262",
+    "preview": "/certificates/previews/edubridge-service-desk-operations.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 991
   },
   {
     "title": "CS250: Python for Data Science",
@@ -50,10 +67,13 @@
     "file": "/certificates/saylor-cs250-python-for-data-science.pdf",
     "group": "certifications",
     "score": "90.37%",
-    "hours": "67 hours (6.7 CEUs)",
     "verificationCode": "7879219166SK",
     "verifyUrl": "https://learn.saylor.org/admin/tool/certificate/index.php?code=7879219166SK",
-    "language": "Python"
+    "language": "Python",
+    "period": "67 hours (6.7 CEUs)",
+    "preview": "/certificates/previews/saylor-cs250-python-for-data-science.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 1084
   },
   {
     "title": "Python Essentials 1",
@@ -62,7 +82,10 @@
     "note": "",
     "file": "/certificates/cisco-python-essentials-1.pdf",
     "group": "certifications",
-    "language": "Python"
+    "language": "Python",
+    "preview": "/certificates/previews/cisco-python-essentials-1.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 948
   },
   {
     "title": "Data Engineering on AWS – Foundations",
@@ -70,7 +93,10 @@
     "date": "Dec 2025",
     "note": "",
     "file": "/certificates/aws-data-engineering-foundations.pdf",
-    "group": "certifications"
+    "group": "certifications",
+    "preview": "/certificates/previews/aws-data-engineering-foundations.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 1082
   },
   {
     "title": "Analyzing Data with Excel",
@@ -80,7 +106,10 @@
     "file": "/certificates/ibm-analyzing-data-with-excel.pdf",
     "group": "certifications",
     "verificationCode": "f312d7b43ea1440ba4845de1b670f3f5",
-    "verifyUrl": "https://courses.edx.org/certificates/f312d7b43ea1440ba4845de1b670f3f5"
+    "verifyUrl": "https://courses.edx.org/certificates/f312d7b43ea1440ba4845de1b670f3f5",
+    "preview": "/certificates/previews/ibm-analyzing-data-with-excel.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 989
   },
   {
     "title": "Python Basics for Data Science (PY0101EN)",
@@ -91,7 +120,10 @@
     "group": "certifications",
     "verificationCode": "82aa7fda137e42ff9e76553f4f38ef3f",
     "verifyUrl": "https://courses.edx.org/certificates/82aa7fda137e42ff9e76553f4f38ef3f",
-    "language": "Python"
+    "language": "Python",
+    "preview": "/certificates/previews/ibm-python-basics-for-data-science.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 989
   },
   {
     "title": "GenAI Powered Data Analytics Job Simulation",
@@ -100,8 +132,18 @@
     "note": "Job simulation",
     "file": "/certificates/tata-genai-data-analytics-simulation.pdf",
     "group": "certifications",
-    "verificationCode": "KY4c9aBN39run77Z8",
-    "userCode": "68b7e3d42bb5da6bda0207ef"
+    "userCode": "68b7e3d42bb5da6bda0207ef",
+    "enrolmentNumber": "KY4c9aBN39run77Z8",
+    "period": "Sep 2025",
+    "tasks": [
+      "Exploratory data analysis and risk profiling",
+      "Predicting delinquency with AI",
+      "Business report and data storytelling for collections strategy",
+      "Implementing an AI-driven collections strategy"
+    ],
+    "preview": "/certificates/previews/tata-genai-data-analytics-simulation.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 989
   },
   {
     "title": "ET AI Hackathon 2.0",
@@ -109,7 +151,10 @@
     "date": "Aug 2026",
     "note": "Certificate of participation",
     "file": "/certificates/et-ai-hackathon-2-participation.pdf",
-    "group": "participation"
+    "group": "participation",
+    "preview": "/certificates/previews/et-ai-hackathon-2-participation.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 991
   },
   {
     "title": "Mock Tests & Interviews: Your Launchpad to a Dream Job",
@@ -118,6 +163,9 @@
     "note": "Certificate of participation",
     "file": "/certificates/unstop-mock-tests-and-interviews.pdf",
     "group": "participation",
-    "verifyUrl": "https://unstop.com/certificate-preview/100505cb-5c94-408e-a0ab-c9823b06978f"
+    "verifyUrl": "https://unstop.com/certificate-preview/100505cb-5c94-408e-a0ab-c9823b06978f",
+    "preview": "/certificates/previews/unstop-mock-tests-and-interviews.jpeg",
+    "previewWidth": 1400,
+    "previewHeight": 989
   }
 ]

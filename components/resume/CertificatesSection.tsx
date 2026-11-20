@@ -31,9 +31,9 @@ export default function CertificatesSection() {
                     {c.note ? (
                       <p className="small resume-lines__descr animate-in-up">{c.note}</p>
                     ) : null}
-                    <p className="small resume-lines__descr animate-in-up">
+                    <div className="small resume-lines__descr animate-in-up">
                       <CertificateButton cert={c} />
-                    </p>
+                    </div>
                   </div>
                 </div>
               ))}

@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 
 export type Cert = {
   title: string;
@@ -31,8 +31,22 @@ export default function CertificateButton({
 }) {
   const [open, setOpen] = useState(false);
   const [closing, setClosing] = useState(false);
+  const [previewTry, setPreviewTry] = useState(0);
   const ref = useRef<HTMLDialogElement>(null);
   const titleId = useId();
+
+  // The preview image may be saved as .webp, .jpeg, .jpg or .png.
+  // Try the configured file first, then the other common types.
+  const previewCandidates = useMemo(() => {
+    if (!cert.preview) return [] as string[];
+    const m = cert.preview.match(/^(.*)\.([A-Za-z0-9]+)$/);
+    const base = m ? m[1] : cert.preview;
+    const first = m ? m[2].toLowerCase() : "";
+    const exts = ["webp", "jpeg", "jpg", "png"].filter((e) => e !== first);
+    return [cert.preview, ...exts.map((e) => `${base}.${e}`)];
+  }, [cert.preview]);
+  const previewSrc =
+    previewTry < previewCandidates.length ? previewCandidates[previewTry] : "";
 
   useEffect(() => {
     if (open && ref.current && !ref.current.open) ref.current.showModal();
@@ -87,7 +101,7 @@ export default function CertificateButton({
           }}
         >
           <div
-            className={`cert-dialog__shell${cert.preview ? "" : " cert-dialog__shell--single"}`}
+            className={`cert-dialog__shell${previewSrc ? "" : " cert-dialog__shell--single"}`}
           >
             <button
               type="button"
@@ -98,11 +112,13 @@ export default function CertificateButton({
               ×
             </button>
 
-            {cert.preview ? (
+            {previewSrc ? (
               <div className="cert-dialog__media">
                 <Image
+                  key={previewSrc}
                   className="cert-dialog__img"
-                  src={cert.preview}
+                  src={previewSrc}
+                  onError={() => setPreviewTry((n) => n + 1)}
                   alt={`Certificate: ${cert.title}`}
                   width={cert.previewWidth ?? 1400}
                   height={cert.previewHeight ?? 990}

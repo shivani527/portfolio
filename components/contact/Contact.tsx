@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useForm, ValidationError } from "@formspree/react";
 import socials from "@/data/socials.json";
 import contactData from "@/data/contact.json";
 import { toast, ToastContainer } from "react-toastify";
@@ -21,32 +20,19 @@ type FormErrors = Partial<Record<keyof FormData, string>>;
 const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
 const phoneRe = /^[+\d][\d\s\-().]{6,}$/; // simple & forgiving
 
-// Formspree form ID comes from the environment (NEXT_PUBLIC_FORMSPREE_FORM_ID,
-// set in .env.local and in your hosting dashboard). useForm() adds the
-// "https://formspree.io/f/" prefix itself, so it must receive only the ID.
-// This accepts either the bare ID ("abcd1234") or the full endpoint URL
-// ("https://formspree.io/f/abcd1234") and always returns just the ID.
-function normalizeFormspreeId(raw?: string): string {
-  if (!raw) return "";
-  let v = raw.trim().replace(/^["']+|["']+$/g, "");
-  // Use the LAST "/f/<id>" so an accidentally doubled URL still resolves correctly
-  const urls = [...v.matchAll(/formspree\.io\/f\/([A-Za-z0-9_-]+)/gi)];
-  if (urls.length) return urls[urls.length - 1][1];
-  v = v.replace(/^\/?f\//, "").replace(/[/?#].*$/, "");
-  return /^[A-Za-z0-9_-]+$/.test(v) ? v : "";
-}
-
-const FORMSPREE_PLACEHOLDER = "YOUR_FORMSPREE_FORM_ID";
-const FORMSPREE_FORM_ID =
-  normalizeFormspreeId(process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID) ||
-  FORMSPREE_PLACEHOLDER;
-const FORM_CONFIGURED = FORMSPREE_FORM_ID !== FORMSPREE_PLACEHOLDER;
+// Messages are sent with FormSubmit (https://formsubmit.co) to the address below.
+// Optional: set NEXT_PUBLIC_FORMSUBMIT_ID to the random alias FormSubmit gives you
+// after activation, so your email address is not visible in the page code.
+const FORMSUBMIT_TARGET =
+  process.env.NEXT_PUBLIC_FORMSUBMIT_ID?.trim() || "shivanikokkula527@gmail.com";
+const FORMSUBMIT_URL = `https://formsubmit.co/ajax/${FORMSUBMIT_TARGET}`;
 
 export default function Contact() {
   const formRef = useRef<HTMLFormElement>(null);
 
-  // ---- Formspree ----
-  const [fsState, fsHandleSubmit] = useForm(FORMSPREE_FORM_ID);
+  // ---- Sending state ----
+  const [sending, setSending] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
 
   // ---- Local state ----
   const [data, setData] = useState<FormData>({
@@ -138,9 +124,9 @@ export default function Contact() {
     if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
-  // Toasts for Formspree outcomes
+  // After a successful send: thank the visitor and clear the form
   useEffect(() => {
-    if (fsState.succeeded) {
+    if (succeeded) {
       toast.success("Thanks! Your message was sent successfully.", {
         position: "bottom-right",
         autoClose: 4000,
@@ -157,34 +143,12 @@ export default function Contact() {
       setTouched({});
       setSubmitted(false);
     }
-    if (fsState.errors) {
-      const formErrors = fsState.errors.getFormErrors();
-      console.error("Formspree error:", formErrors, fsState.errors.getAllFieldErrors());
-      const first = formErrors[0];
-      const detail =
-        first?.code === "FORM_NOT_FOUND"
-          ? "form ID not found"
-          : first?.code === "INACTIVE"
-            ? "the form is inactive (confirm your Formspree email)"
-            : first?.code === "BLOCKED"
-              ? "the submission was blocked"
-              : /failed to fetch|network/i.test(first?.message || "")
-                ? "network problem, please check your connection"
-                : first?.message || "";
-      toast.error(
-        `❌ Oops! Something went wrong${detail ? `: ${detail}` : ""}. Please try again.`,
-        {
-          position: "top-right",
-          autoClose: 6000,
-        }
-      );
-    }
-  }, [fsState.succeeded, fsState.errors]);
+  }, [succeeded]);
 
   // ---- submit ----
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (fsState.submitting) return; // ignore clicks while a request is in progress
+    if (sending) return; // ignore clicks while a request is in progress
 
     // mark submit + touch all to reveal empties
     setSubmitted(true);
@@ -217,41 +181,47 @@ export default function Contact() {
       return;
     }
 
-    // Do not send anything until the owner's own Formspree ID is configured
-    if (!FORM_CONFIGURED) {
-      // No Formspree ID yet: open the visitor's email app with the message filled in
-      const data = new FormData(e.currentTarget);
-      const field = (k: string) => String(data.get(k) ?? "").trim();
-      const body = [
-        field("message"),
-        "",
-        `Name: ${field("name")}`,
-        field("company") ? `Company: ${field("company")}` : "",
-        `Email: ${field("email")}`,
-        field("phone") ? `Phone: ${field("phone")}` : "",
-      ]
-        .filter((l, i) => l !== "" || i === 1)
-        .join("\n");
-      toast.info("Opening your email app to send this message.", {
-        position: "top-right",
-      });
-      window.location.href = `mailto:shivanikokkula527@gmail.com?subject=${encodeURIComponent(
-        "Message from your portfolio"
-      )}&body=${encodeURIComponent(body)}`;
-      return;
-    }
-
-    // finally submit to Formspree
+    // send the message with FormSubmit
+    setSending(true);
+    setSucceeded(false);
     try {
-      await fsHandleSubmit(e);
+      const res = await fetch(FORMSUBMIT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: data.name.trim(),
+          company: data.company.trim(),
+          email: data.email.trim(),
+          phone: data.phone.trim(),
+          message: data.message.trim(),
+          _subject: `Portfolio message from ${data.name.trim()}`,
+          _template: "table",
+          _captcha: "false",
+        }),
+      });
+      const result = await res.json().catch(() => ({}));
+      const ok =
+        res.ok && (result.success === true || result.success === "true");
+      if (ok) {
+        setSucceeded(true);
+      } else {
+        console.error("FormSubmit error:", res.status, result);
+        toast.error(
+          `❌ Oops! ${String(result.message || "Something went wrong").replace(/[.\s]+$/, "")}. Please try again, or email me directly.`,
+          { position: "top-right", autoClose: 6000 }
+        );
+      }
     } catch (err) {
       console.error("Form submission error:", err);
       toast.error(
         "Network error. Please check your connection and try again.",
-        {
-          position: "top-right",
-        }
+        { position: "top-right" }
       );
+    } finally {
+      setSending(false);
     }
   };
 
@@ -284,7 +254,7 @@ export default function Contact() {
         {/* Live region (a11y) */}
         <div className="sr-only" aria-live="polite">
           {firstErrorMessage(errors) ||
-            (fsState.succeeded ? "Form submitted successfully" : "")}
+            (succeeded ? "Form submitted successfully" : "")}
         </div>
 
         <div className="content__block grid-block block-grid-large">
@@ -382,12 +352,6 @@ export default function Contact() {
                         {errors.email}
                       </span>
                     )}
-                    {/* Keep global Formspree field error if any */}
-                    <ValidationError
-                      prefix="Email"
-                      field="email"
-                      errors={fsState.errors}
-                    />
                   </div>
 
                   {/* Phone */}
@@ -445,27 +409,16 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Global Formspree errors */}
-                  {fsState.errors ? (
-                    <div className="col-12 form__item">
-                      <ValidationError
-                        prefix="Form"
-                        field="form"
-                        errors={fsState.errors}
-                      />
-                    </div>
-                  ) : null}
-
                   {/* Submit */}
                   <div className="col-12 form__item animate-in-up">
                     <button
                       className="btn btn-default btn-hover btn-hover-accent"
                       type="submit"
                       // IMPORTANT: allow submit even if invalid (to show errors)
-                      disabled={fsState.submitting}
+                      disabled={sending}
                     >
                       <span className="btn-caption">
-                        {fsState.submitting ? "Sending..." : "Send Message"}
+                        {sending ? "Sending..." : "Send Message"}
                       </span>
                       <i className="ph-bold ph-paper-plane-tilt" />
                     </button>
@@ -479,7 +432,7 @@ export default function Contact() {
               </div>
             </form>
 
-            {fsState.succeeded ? (
+            {succeeded ? (
               <div className="form__reply centered text-center">
                 <i className="ph-bold ph-smiley reply__icon" />
                 <p className="reply__title">Done!</p>

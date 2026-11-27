@@ -1,33 +1,26 @@
 @import url("./plugins.css");
 @import url("./main.css");
-
 .yarl__slide_title {
   padding-left: 200px;
   text-align: center;
 }
-
 .yarl__button[title="Share"] {
   transform: scale(0.8);
   padding-bottom: 10px;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 .yarl__slide_description_container,
 .yarl__slide_title_container {
   display: none;
 }
-
 .yarl__root {
   --yarl__color_backdrop: #212121;
 }
-
 .yarl__slide_image {
   max-height: calc(100vh - 320px) !important;
 }
-
 .yarl__button.yarl__navigation_prev,
 .yarl__button.yarl__navigation_next {
   width: 50px !important;
@@ -42,12 +35,10 @@ html {
   justify-content: center;
   align-items: center;
 }
-
 .yarl__button.yarl__navigation_prev svg,
 .yarl__button.yarl__navigation_next svg {
   transform: scale(2);
 }
-
 @media (min-width: 768px) {
   .yarl__button.yarl__navigation_prev {
     left: 16px;
@@ -55,7 +46,6 @@ html {
     height: 44px;
     line-height: 44px;
   }
-
   .yarl__button.yarl__navigation_next {
     right: 16px;
     width: 44px;
@@ -63,13 +53,11 @@ html {
     line-height: 44px;
   }
 }
-
 .yarl__toolbar {
   .yarl__button[title="Share"] {
     padding-bottom: 0;
     transform: scale(1);
   }
-
   .yarl__button {
     width: 45px !important;
     height: 45px !important;
@@ -79,7 +67,6 @@ html {
     padding: 0 !important;
     margin: 5px 3px !important;
   }
-
   .yarl__icon {
     height: auto !important;
     width: auto !important;
@@ -95,7 +82,6 @@ html {
 .animate-in-up.is-in {
   animation: rise-in 0.4s ease-out backwards;
 }
-
 @keyframes rise-in {
   from {
     opacity: 0;
@@ -104,13 +90,11 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-
   .promo-image,
   .animate-in-up:not(.is-in),
   .animate-fade {
     opacity: 1;
   }
-
   .animate-in-up.is-in {
     animation: none;
   }
@@ -121,7 +105,6 @@ html {
   height: auto;
   cursor: default;
 }
-
 @media only screen and (min-width: 1400px) {
   .cards__item {
     height: auto;
@@ -134,7 +117,6 @@ html {
   text-shadow: none !important;
   font-size: 2.2rem;
 }
-
 .no-touch .socials-square__link:hover i {
   color: var(--t-accent) !important;
 }
@@ -143,26 +125,21 @@ html {
 .project-details {
   margin-top: 1rem;
 }
-
 .project-details summary {
   cursor: pointer;
   width: fit-content;
 }
-
 .project-details h6 {
   margin-top: 1.2rem;
   margin-bottom: 0.5rem;
 }
-
 .project-details__list {
   padding-left: 1.2rem;
   list-style: disc;
 }
-
 .project-details__list li {
   margin-bottom: 0.4rem;
 }
-
 .project-details__status {
   margin-top: 1.2rem;
 }
@@ -172,20 +149,16 @@ html {
   padding: 1.6rem 0.5rem 0;
   color: var(--t-medium);
 }
-
 .project-meta__title {
   margin-bottom: 0.6rem;
   color: var(--t-bright);
 }
-
 .project-meta__text {
   margin-bottom: 0.8rem;
 }
-
 .project-meta h6 {
   color: var(--t-bright);
 }
-
 .project-details summary {
   color: var(--t-bright);
 }
@@ -203,7 +176,6 @@ html {
   cursor: pointer;
   font: inherit;
 }
-
 .cert-dialog {
   border: 1px solid var(--border-color, rgba(128, 128, 140, 0.35));
   border-radius: 2rem;
@@ -214,18 +186,15 @@ html {
   color: var(--t-medium);
   overflow: hidden;
 }
-
 .cert-dialog::backdrop {
   background: rgba(10, 10, 16, 0.6);
 }
-
 .cert-dialog__panel {
   position: relative;
   padding: 2.4rem 2.4rem 2rem;
   max-height: 88vh;
   overflow-y: auto;
 }
-
 .cert-dialog__close {
   position: absolute;
   top: 0.8rem;
@@ -237,38 +206,31 @@ html {
   cursor: pointer;
   color: var(--t-bright);
 }
-
 .cert-dialog__title {
   margin: 0 3rem 1.4rem 0;
   color: var(--t-bright);
 }
-
 .cert-dialog__list {
   margin: 0;
 }
-
 .cert-dialog__row {
   display: flex;
   gap: 1.2rem;
   padding: 0.7rem 0;
   border-top: 1px solid rgba(128, 128, 140, 0.25);
 }
-
 .cert-dialog__row dt {
   flex: 0 0 12rem;
   font-weight: 600;
   color: var(--t-bright);
 }
-
 .cert-dialog__row dd {
   margin: 0;
   overflow-wrap: anywhere;
 }
-
 .cert-dialog__note {
   margin-top: 1rem;
 }
-
 .cert-dialog__actions {
   display: flex;
   flex-wrap: wrap;
@@ -276,19 +238,16 @@ html {
   gap: 1.6rem;
   margin-top: 1.6rem;
 }
-
 .cert-dialog__row dd a {
   color: var(--t-accent);
   text-decoration: underline;
   text-underline-offset: 0.25em;
 }
-
 .cert-dialog__tasks {
   margin: 0;
   padding-left: 1.1rem;
   list-style: disc;
 }
-
 .cert-dialog__tasks li {
   margin-bottom: 0.25rem;
 }
@@ -297,7 +256,6 @@ html {
 .project-media .gallery__link {
   aspect-ratio: 16 / 9;
 }
-
 .project-media .gallery__image {
   position: absolute;
   inset: 0;
@@ -306,7 +264,6 @@ html {
   object-fit: cover;
   object-position: center;
 }
-
 .project-media .gallery__link .picture {
   background-size: cover;
   background-position: center;
@@ -339,53 +296,34 @@ html {
   overflow: hidden;
   animation: project-in 0.28s ease-out;
 }
-
 .project-dialog::backdrop {
   background: rgba(10, 10, 16, 0.65);
   animation: project-backdrop-in 0.28s ease-out;
 }
-
 .project-dialog.is-closing {
   animation: project-out 0.22s ease-in forwards;
 }
-
 .project-dialog.is-closing::backdrop {
   animation: project-backdrop-out 0.22s ease-in forwards;
 }
-
 @keyframes project-in {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.98);
-  }
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
 }
-
 @keyframes project-out {
-  to {
-    opacity: 0;
-    transform: translateY(12px) scale(0.98);
-  }
+  to { opacity: 0; transform: translateY(12px) scale(0.98); }
 }
-
 @keyframes project-backdrop-in {
-  from {
-    opacity: 0;
-  }
+  from { opacity: 0; }
 }
-
 @keyframes project-backdrop-out {
-  to {
-    opacity: 0;
-  }
+  to { opacity: 0; }
 }
-
 .project-dialog__shell {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
   max-height: 92vh;
 }
-
 .project-dialog__media {
   display: flex;
   align-items: center;
@@ -394,7 +332,6 @@ html {
   background: var(--base-shade);
   min-height: 0;
 }
-
 .project-dialog__img {
   width: 100%;
   height: auto;
@@ -403,19 +340,14 @@ html {
   border-radius: 1.6rem;
   animation: project-img-in 0.3s ease-out;
 }
-
 @keyframes project-img-in {
-  from {
-    opacity: 0;
-  }
+  from { opacity: 0; }
 }
-
 .project-dialog__info {
   padding: 3rem 3rem 2.4rem;
   overflow-y: auto;
   max-height: 92vh;
 }
-
 .project-dialog__close {
   position: absolute;
   top: 1rem;
@@ -431,46 +363,37 @@ html {
   line-height: 1;
   cursor: pointer;
 }
-
 .project-dialog__count {
   margin-bottom: 1rem;
   color: var(--t-muted);
 }
-
 .project-dialog__title {
   margin: 1rem 0 1.2rem;
   color: var(--t-bright);
 }
-
 .project-dialog__text {
   margin-bottom: 1.4rem;
 }
-
 .project-dialog__info h6 {
   margin: 1.6rem 0 0.6rem;
   color: var(--t-bright);
 }
-
 .project-dialog__list {
   padding-left: 1.2rem;
   list-style: disc;
 }
-
 .project-dialog__list li {
   margin-bottom: 0.4rem;
 }
-
 .project-dialog__status {
   margin-top: 1.4rem;
 }
-
 .project-dialog__actions {
   display: flex;
   flex-wrap: wrap;
   gap: 1.2rem;
   margin-top: 2rem;
 }
-
 .project-dialog__nav {
   display: flex;
   justify-content: space-between;
@@ -479,7 +402,6 @@ html {
   padding-top: 1.6rem;
   border-top: 1px solid var(--stroke-elements);
 }
-
 .project-dialog__navbtn {
   background: none;
   border: 0;
@@ -488,38 +410,30 @@ html {
   color: var(--t-bright);
   cursor: pointer;
 }
-
 .project-dialog__navbtn:hover {
   color: var(--t-accent);
 }
-
-@media (max-width: 900px) {
+@media (max-width: 900px) and (orientation: portrait), (max-width: 640px) {
   .project-dialog {
     border-radius: 1.8rem;
   }
-
   .project-dialog__shell {
     grid-template-columns: 1fr;
     overflow-y: auto;
   }
-
   .project-dialog__media {
     padding: 1.6rem;
   }
-
   .project-dialog__img {
     max-height: 45vh;
   }
-
   .project-dialog__info {
     overflow: visible;
     max-height: none;
     padding: 2rem 2rem 1.8rem;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
-
   .project-dialog,
   .project-dialog::backdrop,
   .project-dialog__img {
@@ -534,7 +448,6 @@ html {
   padding: 1rem 1rem 0.8rem;
   pointer-events: none;
 }
-
 @media only screen and (min-width: 1400px) {
   .project-media .gallery__descr {
     left: 0.8rem;
@@ -554,7 +467,6 @@ html {
   gap: 1rem;
   margin: 0.4rem 0 1rem;
 }
-
 .project-link {
   display: inline-flex;
   align-items: center;
@@ -569,13 +481,11 @@ html {
   text-decoration: none;
   transition: border-color 0.2s ease, color 0.2s ease;
 }
-
 .project-link:hover,
 .project-link:focus-visible {
   border-color: var(--t-accent);
   color: var(--t-accent);
 }
-
 .project-link--live {
   border-color: var(--t-accent);
   color: var(--t-accent);
@@ -586,11 +496,9 @@ button.project-link {
   font-family: inherit;
   cursor: pointer;
 }
-
 button.project-link.cert-open {
   padding: 0 1.8rem;
 }
-
 .cert-actions {
   margin: 0.6rem 0 0;
 }
@@ -603,30 +511,24 @@ button.project-link.cert-open {
   border-radius: 2.4rem;
   animation: project-in 0.28s ease-out;
 }
-
 .cert-dialog.is-closing {
   animation: project-out 0.22s ease-in forwards;
 }
-
 .cert-dialog.is-closing::backdrop {
   animation: project-backdrop-out 0.22s ease-in forwards;
 }
-
 .cert-dialog::backdrop {
   animation: project-backdrop-in 0.28s ease-out;
 }
-
 .cert-dialog__shell {
   position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   max-height: 92vh;
 }
-
 .cert-dialog__shell--single {
   grid-template-columns: 1fr;
 }
-
 .cert-dialog__media {
   display: flex;
   align-items: center;
@@ -634,7 +536,6 @@ button.project-link.cert-open {
   padding: 2.4rem;
   background: var(--base-shade);
 }
-
 .cert-dialog__img {
   width: 100%;
   height: auto;
@@ -643,39 +544,31 @@ button.project-link.cert-open {
   border-radius: 1rem;
   background: #fff;
 }
-
 .cert-dialog__panel {
   max-height: 92vh;
   padding: 3rem 3rem 2.4rem;
 }
-
 .cert-dialog__actions {
   margin-top: 2rem;
 }
-
-@media (max-width: 900px) {
+@media (max-width: 900px) and (orientation: portrait), (max-width: 640px) {
   .cert-dialog__shell {
     grid-template-columns: 1fr;
     overflow-y: auto;
   }
-
   .cert-dialog__media {
     padding: 1.6rem;
   }
-
   .cert-dialog__img {
     max-height: 40vh;
   }
-
   .cert-dialog__panel {
     max-height: none;
     overflow: visible;
     padding: 2rem 2rem 1.8rem;
   }
 }
-
 @media (prefers-reduced-motion: reduce) {
-
   .cert-dialog,
   .cert-dialog::backdrop {
     animation: none;
@@ -694,4 +587,56 @@ button.project-link.cert-open {
   color: var(--t-bright);
   font-size: 2.8rem;
   line-height: 1;
+}
+
+/* ---------- Responsive fixes ---------- */
+
+/* Allow very narrow phones (the template forced a 360px minimum width) */
+body,
+.content {
+  min-width: 320px;
+}
+@media (max-width: 359px) {
+  body,
+  .content {
+    min-width: 0;
+  }
+  .header__controls .btn {
+    min-width: 0;
+  }
+}
+
+/* Desktop profile panel: fit the screen height instead of a fixed 680/830px.
+   The photo shrinks on short screens, and the panel scrolls if it still does not fit. */
+@media (min-width: 992px) {
+  .avatar {
+    height: auto;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  .avatar::-webkit-scrollbar {
+    display: none;
+  }
+  .avatar__container {
+    height: auto;
+    min-height: min(680px, calc(100vh - 6rem));
+  }
+  .avatar__image img {
+    width: 100%;
+    height: clamp(170px, calc(100vh - 6rem - 360px), 320px);
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+@media (min-width: 1400px) {
+  .avatar {
+    max-height: calc(100vh - 10rem);
+  }
+  .avatar__container {
+    min-height: min(830px, calc(100vh - 10rem));
+  }
+  .avatar__image img {
+    height: clamp(170px, calc(100vh - 10rem - 430px), 400px);
+  }
 }
